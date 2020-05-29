@@ -1,0 +1,24 @@
+{
+  "name": "demobot",
+  "version": "1.0.0",
+  "description": "a simple discord",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanvisavani-discordbot/demobot.git"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "nodejs"
+  ],
+  "author": "kanvi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kanvisavani-discordbot/demobot/issues"
+  },
+  "homepage": "https://github.com/kanvisavani-discordbot/demobot#readme"
+}
