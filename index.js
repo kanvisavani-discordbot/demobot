@@ -3,6 +3,7 @@
 require('dotenv').config()
 const discord = require('discord.js');
 const client = new discord.Client();
+const utils = require('./utils.js');
 
 //on ready
 client.on('ready', () => {
@@ -11,10 +12,8 @@ client.on('ready', () => {
 
 // Create an event listener for messages
 client.on('message', message => {
-    // If the message is "ping"
-    if (message.content === 'Hello') {
-        // Send "pong" to the same channel
-        message.channel.send('Hey!');
+    if (!message.author.bot) {
+        utils.flip(message.content,res=>message.channel.send(res))
     }
 });
 
