@@ -65,12 +65,15 @@ function formatJoke(joke) {
 // Create an event listener for messages
 client.on('message', message => {
     if (message.content.includes('Bot tell me a joke')) {
-        const msg = message.content.split(' ');
+        // Task: Call and response (For example, a knock knock joke)
         message.reply(knock());
 
-    } else if (!message.author.bot) {
-        //utils.flip(message.content, res => message.channel.send(res))
+    } else if (!message.author.bot) {        
+        // Task: Tag users
         message.channel.send(message.content + " <@" + message.author.id + ">");
+        // Task: Send messages
+        message.channel.send("What can I do for you?");
+        // Task: Use an additional package/API to give users info (For example, use momentjs to offer time math)
         message.channel.send("Message delivered on " + futureDate);
     }
 });
