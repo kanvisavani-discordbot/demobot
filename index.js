@@ -4,6 +4,8 @@ require('dotenv').config()
 const discord = require('discord.js');
 const client = new discord.Client();
 const utils = require('./utils.js');
+const moment = require('moment');
+let futureDate = moment(new Date()).format("MMM Do, YYYY");
 
 //on ready
 client.on('ready', () => {
@@ -62,16 +64,14 @@ function formatJoke(joke) {
 
 // Create an event listener for messages
 client.on('message', message => {
-    if (message.content.includes('/knock')) {
+    if (message.content.includes('Bot tell me a joke')) {
         const msg = message.content.split(' ');
-
         message.reply(knock());
 
     } else if (!message.author.bot) {
         //utils.flip(message.content, res => message.channel.send(res))
-        message.channel.send(message.content);
-        const channel = message.channel;
-        channel.send("<@" + message.author.id + ">");
+        message.channel.send(message.content + " <@" + message.author.id + ">");
+        message.channel.send("Message delivered on " + futureDate);
     }
 });
 
